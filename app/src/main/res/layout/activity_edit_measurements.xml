@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+    <!-- Header with Back Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp"
+        android:paddingTop="40dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_arrow_back_black"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            app:tint="#000000"
+            android:contentDescription="@string/back" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Units Selection -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
+        android:layout_marginHorizontal="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Units:"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginEnd="16dp"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#E0E0E0">
+
+            <TextView
+                android:id="@+id/unitCentimeter"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:text="Centimeter"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#BFA0FF"
+                android:gravity="center"
+                android:layout_margin="2dp"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:id="@+id/unitInches"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:text="Inches"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:layout_margin="2dp"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- Main Content Area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp">
+
+
+
+        <!-- Left Side - Measurements List -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="16dp"
+            tools:ignore="NestedWeights">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adjust measurements if needed"
+                android:textColor="#999999"
+                android:textSize="12sp" />
+
+            <!-- Height -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/heightLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Height (cm)"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    tools:ignore="HardcodedText"/>
+
+                <EditText
+                    android:id="@+id/heightInput"
+                    android:layout_width="60dp"
+                    android:layout_height="36dp"
+                    android:text="168"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#FFFFFF"
+                    android:inputType="numberDecimal"
+                    tools:ignore="HardcodedText"/>
+
+            </LinearLayout>
+
+            <!-- Chest -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/chestLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Chest (cm)"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    tools:ignore="HardcodedText"/>
+
+                <EditText
+                    android:id="@+id/chestInput"
+                    android:layout_width="60dp"
+                    android:layout_height="36dp"
+                    android:text="108"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#FFFFFF"
+                    android:inputType="numberDecimal"
+                    tools:ignore="HardcodedText"/>
+
+            </LinearLayout>
+
+            <!-- Waist -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/waistLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Waist (cm)"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    tools:ignore="HardcodedText"/>
+
+                <EditText
+                    android:id="@+id/waistInput"
+                    android:layout_width="60dp"
+                    android:layout_height="36dp"
+                    android:text="86"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#FFFFFF"
+                    android:inputType="numberDecimal"
+                    tools:ignore="HardcodedText"/>
+
+            </LinearLayout>
+
+
+            <!-- Hips -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/hipsLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hips (cm)"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    tools:ignore="HardcodedText"/>
+
+                <EditText
+                    android:id="@+id/hipsInput"
+                    android:layout_width="60dp"
+                    android:layout_height="36dp"
+                    android:text="113"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#FFFFFF"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+
+            <!-- Shoe Size -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Shoe size:"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        tools:ignore="HardcodedText"/>
+
+                    <EditText
+                        android:id="@+id/shoeSizeInput"
+                        android:layout_width="60dp"
+                        android:layout_height="36dp"
+                        android:text="9.5"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_edittext"
+                        android:backgroundTint="#FFFFFF"
+                        android:inputType="numberDecimal" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manually input your shoe size"
+                    android:textSize="12sp"
+                    android:textColor="#999999" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Right Side - Body Outline -->
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="500dp">
+
+            <!-- Body Outline Image -->
+
+            <!-- Measurement Points Overlay - Positioned relative to body outline -->
+            <!-- Height point (head/top) -->
+
+            <ImageView
+                android:id="@+id/bodyOutlineImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Body outline"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outline" />
+
+            <View
+                android:id="@+id/heightPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@id/bodyOutlineImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="75dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <!-- Chest points (chest level) -->
+
+            <!-- Waist points (narrowest part) -->
+
+
+            <View
+                android:id="@+id/chestLeftPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@id/bodyOutlineImage"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="145dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <View
+                android:id="@+id/chestRightPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@id/bodyOutlineImage"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="146dp"
+                android:layout_marginEnd="47dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <View
+                android:id="@+id/waistLeftPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@id/bodyOutlineImage"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="146dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <View
+                android:id="@+id/waistRightPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@id/bodyOutlineImage"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="146dp"
+                android:layout_marginEnd="35dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <!-- Hip points (widest part of hips) -->
+
+            <!-- Mid Thigh points (middle of thigh) -->
+
+            <!-- Shoe size points (feet) -->
+
+
+            <View
+                android:id="@+id/hipLeftPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@id/bodyOutlineImage"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="240dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <View
+                android:id="@+id/hipRightPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@id/bodyOutlineImage"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="242dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <View
+                android:id="@+id/shoeSizeLeftPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignBottom="@id/bodyOutlineImage"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="79dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+            <View
+                android:id="@+id/shoeSizeRightPoint"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignBottom="@id/bodyOutlineImage"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="53dp"
+                android:layout_marginBottom="79dp"
+                android:background="@drawable/measurement_point"
+                android:backgroundTint="#FF6B35" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Bottom Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Would you like to save your measurements?"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="16dp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Continue"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_button"
+
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+</LinearLayout>

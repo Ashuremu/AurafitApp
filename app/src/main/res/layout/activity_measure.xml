@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true">
+
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Instructions at the top (moved outside camera preview) -->
+    <LinearLayout
+        android:id="@+id/instructionsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/rounded_top_background"
+        android:backgroundTint="#DD000000"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/instructionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/please_stand_your_whole_body_in_the_box_front_view_don_t_move_for_5secs"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle"
+        android:backgroundTint="#80000000"
+        android:padding="12dp"
+        android:src="@drawable/ic_arrow_back_black"
+        android:contentDescription="@string/back" />
+
+    <!-- Instructions at the top -->
+
+    <!-- Body Outline Overlay -->
+    <ImageView
+        android:id="@+id/bodyOutlineOverlay"
+        android:layout_width="339dp"
+        android:layout_height="524dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-50dp"
+        android:alpha="0.6"
+        android:contentDescription="Body outline guide"
+        android:src="@drawable/outline" />
+
+    <!-- Green Success Border Overlay -->
+    <View
+        android:id="@+id/successBorderOverlay"
+        android:layout_width="350dp"
+        android:layout_height="535dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-50dp"
+        android:background="@drawable/success_border"
+        android:visibility="gone" />
+
+    <!-- Measurement Points Overlay -->
+    <RelativeLayout
+        android:id="@+id/measurementPointsContainer"
+        android:layout_width="320dp"
+        android:layout_height="516dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-50dp">
+
+        <!-- Chest measurement points -->
+        <View
+            android:id="@+id/chestLeftPoint"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/measurement_point"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/chestRightPoint"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/measurement_point"
+            android:visibility="gone" />
+
+        <!-- Waist measurement points -->
+        <View
+            android:id="@+id/waistLeftPoint"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/measurement_point"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/waistRightPoint"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="85dp"
+            android:background="@drawable/measurement_point"
+            android:visibility="gone" />
+
+        <!-- Hip measurement points -->
+        <View
+            android:id="@+id/hipLeftPoint"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="240dp"
+            android:background="@drawable/measurement_point"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/hipRightPoint"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="240dp"
+            android:layout_marginEnd="75dp"
+            android:background="@drawable/measurement_point"
+            android:visibility="gone" />
+
+        <!-- Height measurement line -->
+        <View
+            android:id="@+id/heightLine"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#FF6B35"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <!-- Countdown Timer -->
+    <TextView
+        android:id="@+id/countdownTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/bottomControlsContainer"
+        android:layout_marginBottom="32dp"
+        android:text="5"
+        android:textColor="#FF6B35"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+
+        android:backgroundTint="#CC000000"
+        android:padding="16dp"
+        android:gravity="center" />
+
+    <!-- Success Checkmark Indicator -->
+    <ImageView
+        android:id="@+id/successCheckmark"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_check_circle"
+        android:tint="#4CAF50"
+        android:alpha="0.9"
+        android:visibility="gone"
+        android:contentDescription="@string/measurement_success" />
+
+    <!-- Success Message -->
+    <TextView
+        android:id="@+id/successMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/successCheckmark"
+        android:layout_marginTop="8dp"
+        android:text="Measurement Complete!"
+        android:textColor="#4CAF50"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="#CC000000"
+        android:padding="12dp"
+        android:visibility="gone" />
+
+    <!-- Bottom Navigation Bar (matching homepage style) -->
+    <LinearLayout
+        android:id="@+id/bottomControlsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@drawable/navbar_cam"
+        android:gravity="center">
+
+        <!-- Step indicator -->
+
+        <!-- Camera Controls -->
+        <LinearLayout
+            android:id="@+id/cameraControlsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="1"
+            android:paddingHorizontal="40dp">
+
+
+            <!-- Capture Button (center - large circle) -->
+
+            <!-- Upload/Plus Icon (right side) -->
+            <ImageView
+                android:id="@+id/captureButton"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/capture"
+                android:padding="8dp"
+                android:src="@drawable/circle" />
+
+
+        </LinearLayout>
+
+        <!-- Manual Measurements Container (Step 2) -->
+        <LinearLayout
+            android:id="@+id/manualMeasurementsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manual Measurements"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Shoe Size Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Shoe Size (US):"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/shoeSizeInput"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#333333"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAAAAA"
+                    android:hint="8.5"
+                    android:inputType="numberDecimal"
+                    android:gravity="center"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/saveMeasurementsButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Save Measurements"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FF6B35"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <!-- Measurement Results Display -->
+        <LinearLayout
+            android:id="@+id/measurementResultsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detected Measurements"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Height -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Height:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/heightValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- cm"
+                    android:textColor="#FF6B35"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Chest -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Chest:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/chestValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- cm"
+                    android:textColor="#FF6B35"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Waist -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Waist:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/waistValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- cm"
+                    android:textColor="#FF6B35"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <!-- Hips -->
+            <LinearLayout
+    android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hips:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/hipsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- cm"
+                    android:textColor="#FF6B35"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

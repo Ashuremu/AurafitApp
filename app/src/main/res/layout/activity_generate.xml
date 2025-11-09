@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true">
+
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- AR Overlay for virtual clothing -->
+    <com.aurafit.AuraFitApp.ui.ar.ArOverlayView
+        android:id="@+id/arOverlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+
+    <!-- Weather Indicator -->
+    <LinearLayout
+        android:id="@+id/weatherIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="@drawable/rounded_top_background"
+        android:backgroundTint="#DD000000"
+        android:elevation="8dp"
+        android:visibility="visible">
+
+        <!-- Weather Icon -->
+        <ImageView
+            android:id="@+id/weatherIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sunny"
+            android:tint="#FFD700"
+            android:contentDescription="Weather status"
+            tools:ignore="UseAppTint" />
+
+        <!-- Weather Text -->
+        <TextView
+            android:id="@+id/weatherText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunny"
+            android:textColor="#FFD700"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+        <!-- Temperature -->
+        <TextView
+            android:id="@+id/temperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25°C"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+    <!-- User Detection Indicator -->
+    <LinearLayout
+        android:id="@+id/detectionIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="@drawable/rounded_top_background"
+        android:backgroundTint="#DD000000"
+        android:elevation="8dp"
+        android:visibility="gone">
+
+        <!-- Detection Status Icon -->
+        <ImageView
+            android:id="@+id/detectionStatusIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_person"
+            android:tint="#4CAF50"
+            android:contentDescription="Detection status"
+            tools:ignore="UseAppTint" />
+
+        <!-- Detection Status Text -->
+        <TextView
+            android:id="@+id/detectionStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Detected"
+            android:textColor="#4CAF50"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- Photo Capture Status Indicator -->
+    <LinearLayout
+        android:id="@+id/captureStatusIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="@drawable/rounded_top_background"
+        android:backgroundTint="#DD000000"
+        android:elevation="8dp"
+        android:visibility="gone">
+
+        <!-- Capture Status Icon -->
+        <ImageView
+            android:id="@+id/captureStatusIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/camera"
+            android:tint="#FFD700"
+            android:contentDescription="Capture status"
+            tools:ignore="UseAppTint" />
+
+        <!-- Capture Status Text -->
+        <TextView
+            android:id="@+id/captureStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Photo Captured!"
+            android:textColor="#FFD700"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- Body Landmarks Overlay (for debugging/visualization) -->
+    <LinearLayout
+        android:id="@+id/landmarksOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Body outline indicator -->
+        <View
+            android:id="@+id/bodyOutlineIndicator"
+            android:layout_width="200dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:background="@drawable/measurement_point"
+            android:alpha="0.3" />
+
+    </LinearLayout>
+
+    <!-- Instructions at the top -->
+    <LinearLayout
+        android:id="@+id/instructionsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/rounded_top_background"
+        android:backgroundTint="#DD000000"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/instructionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:lineSpacingExtra="4dp"
+            android:text="Generate your perfect outfit! Point the camera at yourself to get AI-powered outfit recommendations."
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle"
+        android:backgroundTint="#80000000"
+        android:padding="12dp"
+        android:src="@drawable/ic_arrow_back_black"
+        android:contentDescription="@string/back" />
+
+    <!-- Bottom Navigation Bar (matching measure activity style) -->
+    <LinearLayout
+        android:id="@+id/bottomControlsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@drawable/navbar_cam"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/cameraControlsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="40dp"
+            android:weightSum="3">
+
+            <!-- Left column: Change camera button -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/changeCameraButton"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/change_cam"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:padding="5dp" />
+            </LinearLayout>
+
+            <!-- Center column: Capture button -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/captureButton"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/capture"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/circle" />
+            </LinearLayout>
+
+            <!-- Right column: Skeleton Adjustment Toggle -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/toggleSkeletonAdjustmentButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounded_button"
+                    android:backgroundTint="#4ECDC4"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:padding="1dp"
+                    android:text="Adjust\nSkeleton"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- Action Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="8dp">
+
+            <!-- Generate Outfit Button -->
+            <Button
+                android:id="@+id/generateOutfitButton"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Generate Outfit"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FF6B35"
+                android:elevation="4dp" />
+
+            <!-- Save Outfit Button -->
+            <Button
+                android:id="@+id/saveOutfitButton"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Save Outfit"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#4CAF50"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Skeleton Adjustment Controls -->
+    <LinearLayout
+        android:id="@+id/skeletonAdjustmentContainer"
+        android:layout_width="168dp"
+        android:layout_height="237dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+
+
+        android:background="@drawable/rounded_top_background"
+        android:backgroundTint="#DD000000"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="visible">
+
+
+        <!-- Directional Controls -->
+        <LinearLayout
+            android:id="@+id/skeletonDirectionalControls"
+            android:layout_width="149dp"
+            android:layout_height="188dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Up Button -->
+            <Button
+                android:id="@+id/skeletonUpButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#4ECDC4"
+                android:elevation="4dp"
+                android:text="↑"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Left and Right Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/skeletonLeftButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:backgroundTint="#45B7D1"
+                    android:elevation="4dp"
+                    android:text="←"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/skeletonRightButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:backgroundTint="#45B7D1"
+                    android:elevation="4dp"
+                    android:text="→"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Down Button -->
+            <Button
+                android:id="@+id/skeletonDownButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#4ECDC4"
+                android:elevation="4dp"
+                android:text="↓"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Reset Button -->
+            <Button
+                android:id="@+id/skeletonResetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FF6B6B"
+                android:elevation="4dp"
+
+                android:text="RESET"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <!-- Status Text -->
+            <TextView
+                android:id="@+id/skeletonStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Offset: (0, 0) | Scale: (1.0, 1.0)"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Outfit Option Buttons - Side Panel -->
+    <LinearLayout
+        android:id="@+id/outfitOptionsContainer"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="6dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <!-- Outfit Option 1 -->
+        <Button
+            android:id="@+id/outfitOption1Button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#80000000"
+            android:elevation="4dp"
+            android:padding="8dp" />
+
+        <!-- Outfit Option 2 -->
+        <Button
+            android:id="@+id/outfitOption2Button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:text="2"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#80000000"
+            android:elevation="4dp"
+            android:padding="8dp" />
+
+        <!-- Outfit Option 3 -->
+        <Button
+            android:id="@+id/outfitOption3Button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="3"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#80000000"
+            android:elevation="4dp"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Camera Change Button - Bottom Left -->
+
+
+    <!-- Photo Preview Container -->
+    <LinearLayout
+        android:id="@+id/photoPreviewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#000000"
+        android:visibility="gone"
+        android:gravity="center">
+
+
+
+        <!-- Captured Photo -->
+        <ImageView
+            android:id="@+id/capturedPhotoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Captured photo" />
+
+        <!-- Photo Actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="20dp"
+            android:background="@drawable/navbar_cam">
+
+            <!-- Retake Button -->
+            <Button
+                android:id="@+id/retakeButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Retake"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FF5722"
+                android:elevation="4dp" />
+
+            <!-- Save Photo Button -->
+            <Button
+                android:id="@+id/savePhotoButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Save Photo"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#4CAF50"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Outfit Item Selector Panel -->
+    <LinearLayout
+        android:id="@+id/outfitItemSelectorPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+        
+        <include layout="@layout/outfit_item_selector_panel" />
+        
+    </LinearLayout>
+
+    <!-- Mix & Match Button -->
+    <Button
+        android:id="@+id/mixMatchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="140dp"
+        android:text="Mix &amp; Match"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#9C27B0"
+        android:elevation="6dp"
+        android:visibility="gone"
+        android:paddingHorizontal="16dp" />
+
+</RelativeLayout>

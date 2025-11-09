@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/navbar_cam"
+    android:padding="12dp"
+    android:elevation="16dp">
+
+    <!-- Title and Close Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mix &amp; Match Outfit"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/closeSelectorButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_close"
+            android:background="@drawable/circle"
+            android:backgroundTint="#80000000"
+            android:padding="6dp"
+            android:tint="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Category Tabs -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/categoryTabsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tabTop"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:text="Tops"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FF6B35"
+                android:paddingHorizontal="16dp" />
+
+            <Button
+                android:id="@+id/tabBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:text="Bottoms"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#80000000"
+                android:paddingHorizontal="16dp" />
+
+            <Button
+                android:id="@+id/tabShoes"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:text="Shoes"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#80000000"
+                android:paddingHorizontal="16dp" />
+
+            <Button
+                android:id="@+id/tabAccessories"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Accessories"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#80000000"
+                android:paddingHorizontal="16dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Item List -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/itemsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp" />
+    </HorizontalScrollView>
+
+    <!-- Try On Button -->
+    <Button
+        android:id="@+id/tryOnCustomOutfitButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="Try On Selected Items"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#4ECDC4"
+        android:elevation="4dp" />
+
+</LinearLayout>
+

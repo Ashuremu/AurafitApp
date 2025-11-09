@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "997404871235",
+    "firebase_url": "https://aurafit-7ab57-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aurafit-7ab57",
+    "storage_bucket": "aurafit-7ab57.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997404871235:android:df2b5612540db50e69a2f6",
+        "android_client_info": {
+          "package_name": "com.aurafit.AuraFitApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997404871235-tphs342cu8k5ltjd30ctu5ie6rsnmquh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgteUZ4kXSSYJhECWETB2PrhSXAh5P27g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997404871235-tphs342cu8k5ltjd30ctu5ie6rsnmquh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

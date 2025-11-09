@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <!-- Back Button -->
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="Saved Outfit"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <!-- Fragment Container -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerContainer"
+        android:layout_above="@+id/bottomNavigation">
+
+        <!-- Outfits List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/outfitsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+
+    </FrameLayout>
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/emptyStateContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerContainer"
+        android:layout_above="@+id/bottomNavigation"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_wardrobe_empty"
+            android:alpha="0.3"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No saved outfits yet"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate and save your first outfit!"
+            android:textSize="14sp"
+            android:textColor="#999999"
+            android:gravity="center"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/navbar"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:gravity="center_vertical">
+
+        <!-- Left icon - Gallery (Homepage) -->
+        <ImageView
+            android:id="@+id/galleryIcon"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/gallery"
+            android:contentDescription="Gallery"
+            tools:ignore="HardcodedText" />
+
+        <!-- Middle icon - Community -->
+        <ImageView
+            android:id="@+id/communityIcon"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/community"
+            android:contentDescription="Community"
+            tools:ignore="HardcodedText" />
+
+        <!-- Right icon - Wardrobe -->
+        <ImageView
+            android:id="@+id/drawerIcon"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/drawer"
+            android:contentDescription="Wardrobe"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!-- Floating camera button (sits above navbar) -->
+    <ImageView
+        android:id="@+id/cameraIcon"
+        android:layout_width="96dp"
+        android:layout_height="91dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="51dp"
+        android:contentDescription="Camera"
+        android:elevation="12dp"
+        android:padding="12dp"
+        android:src="@drawable/camera_homepage"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

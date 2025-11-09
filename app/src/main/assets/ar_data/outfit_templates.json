@@ -1,0 +1,35 @@
+{
+  "outfit_templates": {
+    "casual": {
+      "name": "Casual Look",
+      "items": ["tshirt", "jeans", "sneakers"],
+      "style": "casual",
+      "confidence": 85
+    },
+    "formal": {
+      "name": "Formal Look", 
+      "items": ["dress_shirt", "dress_pants", "dress_shoes"],
+      "style": "formal",
+      "confidence": 90
+    },
+    "business_casual": {
+      "name": "Business Casual",
+      "items": ["blouse", "dress_pants", "dress_shoes"],
+      "style": "business_casual", 
+      "confidence": 88
+    },
+    "sporty": {
+      "name": "Sporty Look",
+      "items": ["tshirt", "shorts", "sneakers"],
+      "style": "sporty",
+      "confidence": 82
+    },
+    "elegant": {
+      "name": "Elegant Look",
+      "items": ["blouse", "dress_pants", "dress_shoes", "necklace"],
+      "style": "elegant",
+      "confidence": 92
+    }
+  }
+}
+

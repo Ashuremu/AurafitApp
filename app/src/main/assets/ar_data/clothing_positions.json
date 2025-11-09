@@ -1,0 +1,85 @@
+{
+  "clothing_positions": {
+    "tops": {
+      "tshirt": {
+        "position": {"x": 0.0, "y": -0.2, "z": 0.0},
+        "scale": 1.0,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_shoulder", "right_shoulder", "chest"]
+      },
+      "dress_shirt": {
+        "position": {"x": 0.0, "y": -0.15, "z": 0.0},
+        "scale": 1.1,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_shoulder", "right_shoulder", "chest"]
+      },
+      "blouse": {
+        "position": {"x": 0.0, "y": -0.18, "z": 0.0},
+        "scale": 0.95,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_shoulder", "right_shoulder", "chest"]
+      }
+    },
+    "bottoms": {
+      "jeans": {
+        "position": {"x": 0.0, "y": 0.1, "z": 0.0},
+        "scale": 1.0,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_waist", "right_waist", "left_hip", "right_hip"]
+      },
+      "dress_pants": {
+        "position": {"x": 0.0, "y": 0.08, "z": 0.0},
+        "scale": 1.05,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_waist", "right_waist", "left_hip", "right_hip"]
+      },
+      "shorts": {
+        "position": {"x": 0.0, "y": 0.15, "z": 0.0},
+        "scale": 0.9,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_waist", "right_waist"]
+      }
+    },
+    "shoes": {
+      "sneakers": {
+        "position": {"x": 0.0, "y": 0.4, "z": 0.0},
+        "scale": 0.8,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_foot", "right_foot"]
+      },
+      "dress_shoes": {
+        "position": {"x": 0.0, "y": 0.42, "z": 0.0},
+        "scale": 0.75,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_foot", "right_foot"]
+      },
+      "boots": {
+        "position": {"x": 0.0, "y": 0.35, "z": 0.0},
+        "scale": 0.85,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_foot", "right_foot"]
+      }
+    },
+    "accessories": {
+      "watch": {
+        "position": {"x": 0.1, "y": -0.1, "z": 0.0},
+        "scale": 0.3,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_wrist"]
+      },
+      "necklace": {
+        "position": {"x": 0.0, "y": -0.25, "z": 0.0},
+        "scale": 0.4,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["chest"]
+      },
+      "bracelet": {
+        "position": {"x": 0.05, "y": -0.05, "z": 0.0},
+        "scale": 0.25,
+        "rotation": {"x": 0, "y": 0, "z": 0},
+        "anchor_points": ["left_wrist"]
+      }
+    }
+  }
+}
+

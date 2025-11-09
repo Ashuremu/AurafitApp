@@ -1,0 +1,336 @@
+<resources>
+    <string name="app_name">AURAfit</string>
+    <string name="default_web_client_id">997404871235-tphs342cu8k5ltjd30ctu5ie6rsnmquh.apps.googleusercontent.com</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome! "</string>
+    <string name="invalid_email">Not a valid email</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="label_login">Login</string>
+    <string name="or_login_with">Or Login with</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="register_prompt">Don’t have an account? <u><b>Register now</b></u></string>
+    <string name="content_back">Back</string>
+    <string name="label_register">Register</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="register_hello">Hello!</string>
+    <string name="register_subtitle">Let’s get you started!</string>
+    <string name="login_prompt">Already have an account? <u><b>Log In</b></u></string>
+    <string name="terms_agree">By creating an account you agree to our terms and conditions</string>
+    <string name="terms_agree_clickable">By creating an account you agree to our <u><b>Terms and Conditions</b></u> &amp; <u><b>Privacy Policy</b></u></string>
+    <string name="terms_and_conditions_title">Terms and Conditions</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="terms_dialog_positive">I Agree</string>
+    <string name="terms_dialog_negative">Cancel</string>
+    
+    <!-- Terms and Conditions Content -->
+    <string name="terms_and_conditions_content">
+        <![CDATA[
+        <h2>AURAfit Terms and Conditions</h2>
+        <p><strong>(Updated on October 10, 2025)</strong></p>
+        <p>Welcome to AURAfit, an AI and AR-based outfit recommendation and wardrobe management application developed by the AURAfit Team. By accessing or using AURAfit, you agree to these Terms and Conditions ("Terms"). Please read them carefully before using the app.</p>
+        
+        <h3>1. Acceptance of Terms</h3>
+        <p>By creating an account or using AURAfit, you acknowledge that you have read, understood, and agree to be bound by these Terms and any future updates. We may revise these Terms by posting an updated version on the app. Continued use after updates means acceptance of the revised Terms.</p>
+        
+        <h3>2. Description of Services</h3>
+        <p>AURAfit offers the following key features:</p>
+        <p>• AI-powered outfit recommendations based on user wardrobe, preferences, occasion, and weather;</p>
+        <p>• AR-based virtual try-on and body measurement estimation;</p>
+        <p>• Digital wardrobe management for clothing and accessories;</p>
+        <p>• Community posting and social sharing of fashion content;</p>
+        <p>• Outfit reservation and event-based engagement features.</p>
+        <p>We may modify, add, or remove features as necessary to improve user experience.</p>
+        
+        <h3>3. Eligibility</h3>
+        <p>You must be at least 13 years old to use AURAfit. If under 18, parental or guardian consent is required.</p>
+        
+        <h3>4. User Responsibilities</h3>
+        <p>You agree to:</p>
+        <p>• Provide accurate and updated information upon registration.</p>
+        <p>• Keep login credentials confidential.</p>
+        <p>• Use the app for personal, non-commercial purposes.</p>
+        <p>• Follow community guidelines and avoid harmful or offensive posts.</p>
+        <p>• You are solely responsible for all activities under your account.</p>
+        <p>• Users must provide a valid and accurate email address. The app is not responsible for any issues caused by incorrect or invalid emails.</p>
+        
+        <h3>5. Prohibited Uses</h3>
+        <p>Users agree not to:</p>
+        <p>• Upload or share unlawful, defamatory, or explicit content.</p>
+        <p>• Violate intellectual property rights of others.</p>
+        <p>• Attempt to hack, reverse-engineer, or disrupt AURAfit\'s systems.</p>
+        <p>• Use AURAfit for spam, advertising, or fraudulent activities.</p>
+        <p>• Misuse AR features or community tools in ways that harm others.</p>
+        <p>Violations may lead to suspension or permanent account termination.</p>
+        
+        <h3>6. Community Guidelines</h3>
+        <p>By using AURAfit\'s community features, you agree to respect all members and avoid:</p>
+        <p>• Harassment, hate speech, discrimination, or bullying;</p>
+        <p>• Sharing explicit or offensive content;</p>
+        <p>• Impersonating other individuals or brands.</p>
+        <p>We reserve the right to remove any post or account that violates these guidelines.</p>
+        
+        <h3>7. Intellectual Property Rights</h3>
+        <p>All app content, visuals, designs, software, and AI systems belong to AURAfit or its licensors. Users retain ownership of their uploaded photos or posts but grant AURAfit a limited, royalty-free license to display and share them within the app.</p>
+        
+        <h3>8. Disclaimer on AI Recommendations</h3>
+        <p>AURAfit\'s outfit suggestions are generated through artificial intelligence for style inspiration only. We do not guarantee that suggested outfits will fit perfectly or align with every user\'s personal preference, style, or occasion.</p>
+        
+        <h3>9. Limitation of Liability</h3>
+        <p>AURAfit is provided "as is" and "as available." We do not guarantee uninterrupted service or error-free performance. AURAfit and its developers are not liable for damages arising from:</p>
+        <p>• Service interruption or downtime;</p>
+        <p>• Inaccurate recommendations;</p>
+        <p>• Unauthorized account access beyond our control;</p>
+        <p>• Loss of user data due to technical failures.</p>
+        
+        <h3>10. Third-Party Services</h3>
+        <p>AURAfit may integrate third-party APIs or tools (e.g., weather or authentication services). We are not responsible for their privacy practices or terms. Users are encouraged to review third-party policies before using such integrations.</p>
+        
+        <h3>11. Account Termination</h3>
+        <p>We may suspend or terminate your account if you:</p>
+        <p>• Violate these Terms or the Privacy Policy;</p>
+        <p>• Use AURAfit for illegal or harmful activities;</p>
+        <p>• Provide false or misleading information.</p>
+        <p>You may delete your account anytime through settings. Your data will be deleted in accordance with the Privacy Policy.</p>
+        
+        <h3>12. Governing Law and Dispute Resolution</h3>
+        <p>These Terms are governed by the laws of the Republic of the Philippines. Any dispute shall be resolved exclusively in the appropriate courts of [Jurisdiction].</p>
+        
+        <h3>13. Contact Us</h3>
+        <p>If you have questions, suggestions, or complaints regarding these Terms or the app, please contact: aurafit0104@gmail.com</p>
+        ]]>
+    </string>
+    
+    <!-- Privacy Policy Content -->
+    <string name="privacy_policy_content">
+        <![CDATA[
+        <h2>AURAfit Privacy Policy</h2>
+        <p><strong>(Updated on October 10, 2025)</strong></p>
+        <p>AURAfit ("we," "us," or "our") values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and protect your data when you use our mobile application and related services.</p>
+        <p>By using AURAfit, you agree to the terms described in this Privacy Policy. Please read it carefully before continuing to use the app.</p>
+        
+        <h3>1. What Personal Information We Collect</h3>
+        <p>When you use AURAfit, we may collect only the information necessary to provide you with a smooth and personalized experience.</p>
+        
+        <h4>1.1 Personal Information</h4>
+        <p>We may collect:</p>
+        <p>• Full name or display name</p>
+        <p>• Email address</p>
+        <p>• Gender, age, and body measurements (except belly size, if unavailable)</p>
+        <p>• Uploaded wardrobe items (clothes, shoes, and accessories)</p>
+        <p>• Photos or AR scans for outfit visualization</p>
+        <p>• Account credentials and preferences</p>
+        
+        <h4>1.2 Device and Technical Data</h4>
+        <p>To improve app performance and security, we may automatically collect:</p>
+        <p>• Device model, operating system, and app version</p>
+        <p>• IP address and general location (non-precise)</p>
+        <p>• Browser type (if using web version)</p>
+        <p>• Crash logs, analytics, and usage data</p>
+        
+        <h4>1.3 Optional and Community Data</h4>
+        <p>If you engage with AURAfit\'s community features, we may also collect:</p>
+        <p>• Photos, captions, and comments you upload</p>
+        <p>• Messages or interactions with other users</p>
+        <p>We do not collect or store financial, SMS, or credit-related information.</p>
+        
+        <h3>2. How We Use Your Information</h3>
+        <p>AURAfit uses your information solely for the following purposes:</p>
+        <p>• To create and manage your AURAfit account</p>
+        <p>• To generate AI-based outfit recommendations and style suggestions</p>
+        <p>• To enable AR-based body measurement and virtual try-ons</p>
+        <p>• To improve app features, usability, and personalization</p>
+        <p>• To facilitate community interaction, event participation, and reservations</p>
+        <p>• To send you important updates, reminders, or notifications</p>
+        <p>• To ensure user safety and prevent misuse or fraud</p>
+        <p>• To comply with legal and regulatory requirements</p>
+        <p>We do not sell, rent, or trade your data to any third party.</p>
+        
+        <h3>3. Third-Party Data Processing and Integrations</h3>
+        <p>We may share your information with trusted service providers (e.g., cloud hosting, analytics) solely to support app functionality. All third-party processors are contractually obligated to maintain the same level of data protection as required under the Data Privacy Act of 2012 (R.A. 10173).</p>
+        <p>If you use third-party integrations (e.g., Google login or weather-based outfit suggestions), please review their respective privacy policies as AURAfit is not responsible for how those external systems handle data.</p>
+        
+        <h3>4. International Data Transfer</h3>
+        <p>Your data may be processed and stored on servers located outside the Philippines. We ensure that such transfers comply with applicable data protection laws and maintain equivalent safeguards for your personal information.</p>
+        
+        <h3>5. Protection of Personal Information</h3>
+        <p>We apply strict technical and organizational measures to protect your data against unauthorized access, disclosure, alteration, or loss. This includes encryption, access controls, regular security testing, and limited access for authorized personnel only.</p>
+        <p>However, please note that no system is completely secure, and we cannot guarantee absolute data protection.</p>
+        
+        <h3>6. Data Retention and Deletion</h3>
+        <p>We retain your personal data only for as long as necessary to fulfill the purposes stated in this Policy or comply with legal obligations.</p>
+        <p>If you delete your account, your personal data will be permanently removed or anonymized within a reasonable period, unless longer retention is required by law.</p>
+        
+        <h3>7. Your Rights Under the Data Privacy Act</h3>
+        <p>As a user, you have the right to:</p>
+        <p>• Access and obtain a copy of your personal information</p>
+        <p>• Correct or update inaccurate data</p>
+        <p>• Withdraw consent to data collection or processing</p>
+        <p>• Request the deletion or destruction of your personal data</p>
+        <p>• Object to data processing for specific purposes</p>
+        <p>• File a complaint with the National Privacy Commission (NPC) for violations of your rights</p>
+        <p>You can exercise these rights by contacting us at aurafit0104@gmail.com.</p>
+        
+        <h3>8. Children\'s Privacy</h3>
+        <p>AURAfit is not intended for users under 13 years old. If we become aware that a child has registered or provided personal data without parental consent, we will promptly delete the information.</p>
+        
+        <h3>9. Cookies and Analytics</h3>
+        <p>AURAfit uses cookies and similar technologies to enhance app performance and user experience. You may disable cookies in your device or browser settings, but some features may not function properly as a result.</p>
+        
+        <h3>10. Updates to This Policy</h3>
+        <p>We may update this Privacy Policy periodically. The updated version will be posted within the app and will indicate the latest revision date. Continued use of AURAfit after any updates constitutes acceptance of the revised Policy.</p>
+        
+        <h3>11. Data Protection Officer (DPO)</h3>
+        <p>AURAfit has appointed a Data Protection Officer to oversee compliance and handle privacy concerns. Email at aurafit0104@gmail.com, [Jurisdiction]</p>
+        
+        <h3>12. Consent and Acknowledgement</h3>
+        <p>By creating an account or using AURAfit, you consent to the collection and processing of your data in accordance with this Privacy Policy. If you disagree, please refrain from using AURAfit and providing personal information.</p>
+        ]]>
+    </string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="msg_registration_dummy">Registration clicked (stub)</string>
+    <string name="title_activity_homepage">Homepage</string>
+    <string name="ai_recommendation_hint">AI Recommendation</string>
+    <string name="category_shirts">Shirts</string>
+    <string name="category_pants">Pants</string>
+    <string name="category_shoes">Shoes</string>
+    <string name="category_accessories">Accessories</string>
+    <string name="category" />
+    <string name="category_icon">Category icon</string>
+    <string name="recommendation_image">Recommendation image</string>
+    <string name="recommendation_title">Recommendation title</string>
+    <string name="recommendation_description">Recommendation description</string>
+    <string name="invalid_username">Username must be at least 3 characters</string>
+    <string name="invalid_username_format">Username can only contain letters, numbers, and underscores</string>
+    <string name="invalid_username_length">Username must be between 3-20 characters</string>
+    <string name="invalid_email_format">Please enter a valid email address</string>
+    <string name="invalid_email_empty">Email cannot be empty</string>
+    <string name="invalid_password_length">Password must be at least 8 characters</string>
+    <string name="invalid_password_weak">Password must contain at least one uppercase letter, one lowercase letter, and one number</string>
+    <string name="invalid_password_empty">Password cannot be empty</string>
+    <string name="password_mismatch">Passwords do not match</string>
+    <string name="confirm_password_empty">Please confirm your password</string>
+    <string name="password_strength_weak">Weak password</string>
+    <string name="password_strength_medium">Medium password</string>
+    <string name="password_strength_strong">Strong password</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="please_stand_your_whole_body_in_the_box_front_view_don_t_move_for_5secs">Please stand your whole body in the box, front view. Don\'t move for 5secs</string>
+    <string name="back">Back</string>
+    <string name="capture">Capture</string>
+    <string name="upload">Upload</string>
+
+    <!-- Camera and Storage Permissions -->
+    <string name="camera_permission_required">Camera permission is required for body measurement. Please enable it in app settings.</string>
+    <string name="storage_permission_required">Storage permission is required to upload photos. Please enable it in app settings.</string>
+    <string name="storage_permission_optional">Storage permission is optional but needed for photo upload</string>
+    <string name="permissions_denied_title">Permissions Required</string>
+    <string name="permissions_denied_message">This app needs camera and storage permissions to function properly. Please enable them in Settings.</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Gallery and Image Processing -->
+    <string name="processing_image">Processing uploaded image...</string>
+    <string name="photo_uploaded_success">Photo uploaded and processed successfully!</string>
+    <string name="photo_upload_failed">Failed to process uploaded image</string>
+    <string name="no_gallery_app">No gallery app found</string>
+    <string name="select_image">Select Image</string>
+    <string name="failed_to_select_image">Failed to select image</string>
+
+    <!-- Measurement Instructions -->
+    <string name="measurement_instructions_step1">Step 1: Position yourself in the frame and capture</string>
+    <string name="measurement_instructions_step2">Step 2: Enter additional measurements</string>
+    <string name="body_measurements_captured">Body measurements captured!</string>
+    <string name="measurements_saved_success">Body measurements saved successfully!</string>
+    <string name="measurements_save_failed">Failed to save measurements: %s</string>
+    <string name="measurement_success">Measurement successful</string>
+
+    <!-- Edit Measurements Activity -->
+    <string name="units_label">Units:</string>
+    <string name="centimeter">Centimeter</string>
+    <string name="inches">Inches</string>
+
+    <string name="height_in">Height (in)</string>
+
+    <string name="chest_in">Chest (in)</string>
+
+    <string name="waist_in">Waist (in)</string>
+
+
+    <string name="hips_in">Hips (in)</string>
+
+
+    <string name="shoe_size_label">Shoe size:</string>
+    <string name="manual_input_shoe_size">Manually input your shoe size</string>
+    <string name="save_measurements_prompt">Would you like to save your measurements?</string>
+    <string name="continue_button">Continue</string>
+
+    <!-- Validation Messages -->
+    <string name="fill_all_fields">Please fill in all measurement fields</string>
+    <string name="enter_valid_measurements">Please enter valid measurements</string>
+    <string name="enter_valid_numeric">Please enter valid numeric values</string>
+    <string name="valid_height_range">Please enter a valid height (100-250 cm)</string>
+    <string name="valid_chest_range">Please enter a valid chest measurement (60-150 cm)</string>
+    <string name="valid_shoe_size_range">Please enter a valid shoe size (3-20)</string>
+
+    <!-- Style Preferences Activity -->
+    <string name="style_preferences_title">What style or preferences would you like?</string>
+    <string name="style_casual">Casual</string>
+    <string name="style_elegant">Elegant</string>
+    <string name="style_chic">Chic</string>
+    <string name="discard_changes">Discard Changes</string>
+    <string name="done">Done</string>
+
+    <!-- Settings Activity -->
+    <string name="settings_title">Settings</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="account_section">ACCOUNT</string>
+    <string name="name_label">Name: </string>
+    <string name="age_label">Age: </string>
+    <string name="age_not_set">Age: Not set</string>
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="display_name_hint">Display name</string>
+    <string name="age_hint">Age</string>
+    <string name="enter_valid_age">Please enter a valid age</string>
+    <string name="enter_valid_age_range">Please enter a valid age (1-120)</string>
+    <string name="enter_at_least_one_field">Please enter at least one field</string>
+    <string name="body_measurement_label">Body Measurement:</string>
+    <string name="height_cm">Height(cm):</string>
+    <string name="chest_cm">Chest(cm):</string>
+    <string name="waist_cm">Waist(cm):</string>
+    <string name="hips_cm">Hips(cm):</string>
+    <string name="update_measurements_prompt">Would you like to update body measurements?</string>
+    <string name="update">Update</string>
+    <string name="general_section">GENERAL</string>
+    <string name="notifications">Notifications</string>
+    <string name="log_out">Log Out</string>
+    <string name="delete_account">Delete account</string>
+    <string name="feedback_section">FEEDBACK</string>
+    <string name="report_bug">Report a bug</string>
+    <string name="send_feedback">Send feedback</string>
+    
+    <!-- Community Activity -->
+    <string name="community_title">Community</string>
+    <string name="profile_tab">Profile</string>
+    <string name="discover_tab">Discover</string>
+    <string name="posts_tab">Post</string>
+    <string name="likes_tab">Likes</string>
+    <string name="posts_count">posts</string>
+    <string name="followers_count">follower</string>
+    <string name="following_count">following</string>
+    <string name="likes_count">Likes</string>
+    <string name="ratings_label">Ratings:</string>
+    <string name="posted_time_ago">Posted %s ago</string>
+    <string name="add_post">Add Post</string>
+    <string name="edit_post">Edit Post</string>
+    <string name="download_post">Download</string>
+    <string name="placeholder_image">Placeholder Image</string>
+</resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="40dp"
+        android:gravity="center_vertical"
+        android:elevation="2dp">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back_black"
+            android:padding="4dp"
+            android:contentDescription="Back" />
+
+        <!-- Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Tab Navigation -->
+    <LinearLayout
+        android:id="@+id/tabNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:layout_below="@id/header">
+
+        <TextView
+            android:id="@+id/profileTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Profile"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/tab_underline" />
+
+        <TextView
+            android:id="@+id/discoverTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Discover"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/likesTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Likes"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- ViewPager2 for Fragments -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabNavigation"
+        android:layout_above="@+id/bottomNavigation" />
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/navbar_cam"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:gravity="center_vertical">
+
+        <!-- Left icon - Gallery (Homepage) -->
+        <ImageView
+            android:id="@+id/galleryIcon"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/gallery"
+            android:contentDescription="Gallery"
+            tools:ignore="HardcodedText" />
+
+        <!-- Middle icon -->
+        <ImageView
+            android:id="@+id/communityIcon"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/community"
+            android:contentDescription="Community"
+            tools:ignore="HardcodedText" />
+
+        <!-- Right icon - Wardrobe -->
+        <ImageView
+            android:id="@+id/drawerIcon"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/drawer"
+            android:contentDescription="Wardrobe"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!-- Floating Action Button -->
+    <ImageView
+        android:id="@+id/addPostButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/fab_background"
+        android:contentDescription="Add Post"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_add"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>
